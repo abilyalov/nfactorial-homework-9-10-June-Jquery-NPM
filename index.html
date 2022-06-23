@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link href="css/main.css" rel="stylesheet" type="text/css" media="all">
+    <title>Mad Libs</title>
+</head>
+<body onload="getValue()" id="mainContainer">
+
+
+    <div class="container">
+        <div>
+            <h1>
+                <button onclick="setWhiteTheme()">
+                    Set light theme
+                </button>
+                <button onclick="setDarkTheme()">
+                    Set dark theme
+                </button>
+            </h1>
+        </div>
+        <div id="questions">
+            <h1>Mad Libs</h1>
+            <hr>
+            <form role="form">
+                <div class="form-group">
+                    <label for="person">Person Name:</label>
+                    <input type="text" id="person" class="form-control person" placeholder="Enter a person's name">
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="character">Character:</label>
+                    <input type="text" id="character" class="form-control character" placeholder="Enter a character">
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="adverb">Adverb:</label>
+                    <input type="text" id="adverb" class="form-control adverb" placeholder="Enter adverb">
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="adjective">Adjective:</label>
+                    <input type="text" id="adjective" class="form-control adjective" placeholder="Enter person's adjective">
+                </div>
+                <br>
+            </form>
+            <button id="btn-click" type="submit" class="btn btn-primary btn-lg">Generate!</button>
+            <hr>
+        </div>
+        <div id="story">
+            <h3>One day, my friend <span class="person"></span> was visiting New York and ran into <span class="character"></span>. <span class="person"></span> ran <span class="adverb"></span> to meet <span class="character"></span>. But <span class="character"></span> turned out to be very <span class="adjetive"></span> and <span class="person"></span> did not enjoy the meeting.</h3>
+        </div>
+        <br>
+        <div id="calculator">
+            <h1>Tom Thumb</h1>
+            <hr>
+            <form role="form">
+                <div class="form-group">
+                    <label for="width">Image with (px):</label>
+                    <input type="text" id="width" class="form-control width" placeholder="Enter an image width">
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="height">Image height (px):</label>
+                    <input type="text" id="height" class="form-control height" placeholder="Enter an image height">
+                </div>
+                <br>
+                <div class="form-group">
+                    <label for="colors">Numbers of Colors:</label>
+                    <input type="text" id="colors" class="form-control height" placeholder="Enter a number of colors">
+                </div>
+                <br>
+            </form>
+            <button id="btn-click-2" type="submit" class="btn btn-primary btn-lg">Calculate File Size</button>
+            <hr>
+        </div>
+        <div class="calculation"></div>
+    </div>
+    <script>
+
+    function setWhiteTheme() {
+        localStorage.setItem('theme', 'light');
+        const root  = document.getElementById('mainContainer');
+        root.className = 'light';
+    }
+    function setDarkTheme() {
+        localStorage.setItem('theme',  'dark');
+        const root  = document.getElementById('mainContainer');
+        root.className = 'dark';
+    }
+    function getValue() {
+        const theme = localStorage.getItem('theme');
+        const root  = document.getElementById('mainContainer');
+        root.className = theme;
+    }
+    </script>
+
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+.container {
+    padding-top: 50px;
+    max-width: 500px;
+}
+
+body.light {
+    background-color: white;
+}
+    
+body.dark {
+        background-color: black;
+}
+
+    
